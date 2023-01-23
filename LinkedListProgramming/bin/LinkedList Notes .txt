@@ -1,0 +1,27 @@
+Definition:
+    - Linked List is a linear data structure. Unlike array, linked list elements are not sorted at a contiguous location; the element are linked using pointers. They include a series of connected nodes. Here, each node stores the data and the address of the next node.
+
+    - Advantages of Linked-List
+        - Dynamic Array
+        - Ease of Insertion and Deletion
+    
+    - Disadvantages of Linked-List
+        - Random access are not allowed. 
+        - Extra memory space for address pointer storage.
+        - it take time in traversing
+        - Reverse traversing of a linked list is impossible.
+        - it will be confusing when we work with pointers.
+        - direct access to element is impossible.
+        - Searching for an element is costly
+
+    - Types Of Linked-List
+        - Simple Linked List
+            
+        - Doubly Linked List 
+            -- In this type of linked list, one can move or traverse the linked list in both direction.
+        - Circular Linked List 
+            -- In this type of linked list, the last node of the linked list contains the link of the first/head node of the linked list in its next pointer.
+        - Doubly Circular Linked List
+            -- A Doubly Circular linked list or a Circular two-way linked list is a more complexity type of linked list that contains a pointer to the next as well as the previous node in the sequence.
+        - Header Linked List 
+            -- A header linked list is a special type of linked list that contains a header node at the beginning of the list.
