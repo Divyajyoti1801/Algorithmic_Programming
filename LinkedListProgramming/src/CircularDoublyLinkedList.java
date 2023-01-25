@@ -12,54 +12,63 @@ public class CircularDoublyLinkedList {
     }
 
     static Node head = null;
+    static Node tail = null;
 
-    static void insertionCDLL(int data) {
+    static void insertCDLL(int data) {
+        // From Last element Insertion
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
             newNode.next = head;
+            return;
         }
         Node temp = head;
         while (temp.next != head) {
             temp = temp.next;
         }
+        newNode.next = head; // temp.next=head;
         temp.next = newNode;
         newNode.prev = temp;
         head.prev = newNode;
+        tail = newNode;
     }
 
-    static void insertionFirstCDLL(int data) {
+    static void insertFirstCDLL(int data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
             newNode.next = head;
         }
-        Node temp = head;
-        newNode.prev = temp.prev;
-        temp.prev = newNode;
-        newNode.next = temp;
+        newNode.next = head;
+        newNode.prev = head.prev;
+        head.prev = newNode;
         head = newNode;
+        newNode.prev.next = newNode;
     }
 
-    static void deletionCDLL() {
+    static void deleteCDLL() {
         if (head == null) {
             return;
         }
         Node temp = head;
-        while (temp.next != head) {
-            temp = temp.next;
+        Node delNode = temp.prev;
+        delNode.prev.next = temp;
+        temp.prev = delNode.prev;
+        delNode.prev = null;
+        delNode.next = null;
+        tail = head.prev;
+    }
+
+    static void deleteFirstCDLL() {
+        if (head == null) {
+            return;
         }
-        temp.prev.next = head;
+        Node temp = head;
+        temp.next.prev = temp.prev;
         temp.prev = null;
-    }
-
-    static void deletionFirstCDLL() {
-        if (head == null) {
-            return;
-        }
-        Node temp = head;
-        head = head.next;
-
+        head = temp.next;
+        temp.next = null;
+        head.prev.next = head;
     }
 
     static void traverseCDLL() {
@@ -75,7 +84,29 @@ public class CircularDoublyLinkedList {
         System.out.println("START");
     }
 
-    public static void main(String args[]) {
+    static void reverseTraversalDLL() {
+        if (head == null) {
+            return;
+        }
+        Node temp = tail;
+        while (temp.prev != tail) {
+            System.out.print(temp.data + " <=> ");
+            temp = temp.prev;
+        }
+        System.out.print(temp.data + " <=> ");
+        System.out.println("HEAD");
+    }
 
+    public static void main(String args[]) {
+        insertCDLL(1);
+        insertCDLL(2);
+        insertCDLL(3);
+        insertCDLL(4);
+        insertCDLL(5);
+        insertFirstCDLL(10);
+        deleteCDLL();
+        deleteFirstCDLL();
+        traverseCDLL();
+        reverseTraversalDLL();
     }
 }
