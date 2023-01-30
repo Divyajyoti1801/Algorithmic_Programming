@@ -1,0 +1,35 @@
+Tree Data Structure
+    - Hierarchal data structure.
+    - Parts are:
+        -- Root
+        -- Branch
+        -- Leaf 
+    - We mainly talk about Binary Tree
+    - Node in which data is stored.
+    - Nodes which does not have branches are called Leaf Nodes.
+    - In Binary Tree, A node can only have two branches
+    - Left Child, Right Child, Sibling Node, Ancestor
+    - Levels and Subtree
+    
+    //Concept Clarity Question
+    - Children of 2: [4,5]
+    - No. of Leaves: [4]
+    - Parent of Three: [1]
+    - Level of 5: level-3
+    - Subtree of 2 and 6: [[4,7,8],[5]], [6,9]
+    - Ancestor of 4: 2 and 1
+
+PreOrder Tree:
+    - Input: [1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1]
+    - -1 represents null branch
+    - it also distinguish the children Node of Tree
+
+    => PreOrder Traversal
+        -> Root -> Left-Subtree -> Right-Subtree
+    
+    => InOrder Traversal
+        -> Left-Subtree -> Root -> Right-Subtree
+    
+    => PostOrder Traversal
+        -> Left-Subtree -> Right-Subtree -> Root 
+        
