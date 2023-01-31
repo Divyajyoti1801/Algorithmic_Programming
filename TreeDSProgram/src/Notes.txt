@@ -24,12 +24,16 @@ PreOrder Tree:
     - -1 represents null branch
     - it also distinguish the children Node of Tree
 
-    => PreOrder Traversal
+    => PreOrder Traversal: Time Complexity: O(n)
         -> Root -> Left-Subtree -> Right-Subtree
     
-    => InOrder Traversal
+    => InOrder Traversal: Time Complexity: O(n)
         -> Left-Subtree -> Root -> Right-Subtree
     
     => PostOrder Traversal
         -> Left-Subtree -> Right-Subtree -> Root 
-        
+    
+    => LevelOrder Traversal: Time Complexity: O(n)
+        -> Iterative Method
+        -> Another Data structure got used Queue, Because of FIFO property.
+        -> Breath First Search of Binary Search Tree.
