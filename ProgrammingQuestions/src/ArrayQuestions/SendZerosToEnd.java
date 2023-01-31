@@ -9,7 +9,7 @@ public class SendZerosToEnd {
         System.out.println(Arrays.toString(arr));
     }
 
-    // Know as Snowball Method
+    // Known as Snowball Method
     static void solution(int[] arr) {
         int snowBallSize = 0;
         for (int i = 0; i < arr.length; i++) {
