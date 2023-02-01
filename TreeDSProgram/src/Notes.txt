@@ -37,3 +37,9 @@ PreOrder Tree:
         -> Iterative Method
         -> Another Data structure got used Queue, Because of FIFO property.
         -> Breath First Search of Binary Search Tree.
+
+Diameter of the tree:
+    -> Number of Nodes in the longest path b/w any nodes.
+        - Diameter through root 
+        - Dimeter not through root
+        
