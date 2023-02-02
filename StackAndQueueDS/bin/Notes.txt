@@ -1,0 +1,17 @@
+STACK AND QUEUE NOTES
+
+    - Stack data structure
+    - LIFO (Last in First out)
+    - Important Function:
+        - Push O(1) //Insertion 
+        - Pop O(1) // Deleting 
+        - Peek O(1) // Value of first element
+    
+    - Implementation
+        - Array (Last index must be treated as Top of the stack)
+            - stack full condition (no. of el == n) //Not usually used
+        - ArrayList // Variable sized very much used 
+        - LinkedList // Same for linked list and also used 
+            - head creation
+            - new element added it will become head;
+             
