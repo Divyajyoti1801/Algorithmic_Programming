@@ -14,4 +14,23 @@ STACK AND QUEUE NOTES
         - LinkedList // Same for linked list and also used 
             - head creation
             - new element added it will become head;
-             
+
+    
+    - QUEUE DATA STRUCTURE
+        - FIFO (First In First Out)
+        - Operations
+            - Enque : Add the element
+            - Dequeue : Removing the element
+            - Front : Peek
+        - Implementation
+            - Queue using Array (Fixed Size) (Front=-1,Rear=-1)
+                -- Add O(1)
+                -- Remove O(n)  
+                -- Peek O(n)
+            - Circular Queue using array is really efficient.
+                -- Add O(1)
+                -- Remove O(1)
+                -- Peek O(1)
+                - Rear = (Rear+1) % size; //Very important statement for circular queue implementation
+                - (Rear+1)%size == front // Circular Queue is full. 
+
