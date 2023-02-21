@@ -1,0 +1,48 @@
+Graph
+
+    - It is an intuitive Data Structure.
+    - It is a network of nodes.
+
+    - Basic Terminology:
+        - Each Node is known as vertex (plural form vertices).
+        - The line of connection is known edges.
+    
+    - Application of Graphs
+        - Maps
+        - Social Network
+        - Delivery Network
+    
+    - Vertex: All the nodes are present in graph.
+    - Edge: Connection b/w edges
+        - Uni-Directional
+        - Bi-Directional
+    
+    - Directed Graph: Graph where all edges are directional in known as Directed graph.
+    - UnDirected Graph: Graph where all edges are non-directional in known as UnDirected graph.
+    - Weighted Graph : Weight of the edge has been specified (Associated with edge).
+
+    - Representation of Graph in memory: 
+        -- Adjacency List
+        -- Adjacency Matrix
+        -- Edge List
+        -- 2D Matrix (Implicit Graphs)
+    
+    - Adjacency List: Layman terms "List of Lists"
+        - From one vertex the other vertex you can reach is known as neighbor in graph.
+        - Implementation in Coding: Array of ArrayList.
+        - We can make it with Vertices Array of ArrayList
+        - We can make it with edge 
+            static class Edge{
+                int src;
+                int dest;
+                Edge(int src,int dest){
+                    this.src=src;
+                    this.dest=dest;
+                }
+            }
+            ArrayList<Edge> graph[V]
+            
+            graph[0].add(new Edge(0,2));
+            graph[1].add(new Edge(1,2));
+            graph[1].add(new Edge(1,3));
+     
