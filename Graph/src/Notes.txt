@@ -46,3 +46,20 @@ Graph
             graph[1].add(new Edge(1,2));
             graph[1].add(new Edge(1,3));
      
+    - Traversal in Graph 
+        - Breadth First Search (BFS)
+            -- Same as level order traversal
+            -- Queue Data structure FILO
+            -- Visited array: To keep the track of visited array size(V) (Boolean Array) (Initialized as False)
+            -- Pseudo Code:
+                -- if(vis[curr]==F)
+                -- print(curr)
+                -- vis[curr]=T
+                -- curr Node neighbors add in Queue.
+            -- Time Complexity: O(V+E)
+
+        - Depth First Search (DFS)
+            -- Keep going to the 1st neighbor.
+            -- Recursive Traversal
+    
+    - Graph also has disconnected  component.
