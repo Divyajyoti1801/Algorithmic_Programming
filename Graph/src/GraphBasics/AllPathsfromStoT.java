@@ -2,7 +2,9 @@ package GraphBasics;
 
 import java.util.*;
 
-public class DepthFirstSearch {
+//Important Algo: All paths from Source to Target.
+
+public class AllPathsfromStoT {
     static class Edge {
         int src;
         int dest;
@@ -15,7 +17,7 @@ public class DepthFirstSearch {
 
     static void createGraph(ArrayList<Edge> Graph[]) {
         for (int i = 0; i < Graph.length; i++) {
-            Graph[i] = new ArrayList<>();
+            Graph[i] = new ArrayList<>(); // To escape null pointer exception'
         }
         Graph[0].add(new Edge(0, 1));
         Graph[0].add(new Edge(0, 2));
@@ -36,32 +38,30 @@ public class DepthFirstSearch {
 
     }
 
-    static void DFS(ArrayList<Edge> Graph[], int curr, boolean visited[]) {
-        System.out.print(curr + " ");
-        visited[curr] = true;
+    static void allPathSourceToDest(ArrayList<Edge> Graph[], boolean visited[], int curr, String path, int tar) {
+        if (curr == tar) {
+            System.out.println(path);
+            return;
+        }
         for (int i = 0; i < Graph[curr].size(); i++) {
             Edge e = Graph[curr].get(i);
             if (visited[e.dest] == false) {
-                DFS(Graph, e.dest, visited);
+                visited[curr] = true;
+                allPathSourceToDest(Graph, visited, e.dest, path + e.dest, tar);
+                visited[curr] = false;
             }
-
         }
-
     }
 
     public static void main(String args[]) {
         int V = 7;
         ArrayList<Edge> Graph[] = new ArrayList[V];
-        createGraph(Graph);
-        boolean visited[] = new boolean[V];
-        // Depth First Search is a recursive function
-        // Case of disconnected graph
-        for (int i = 0; i < V; i++) {
-            if (visited[i] == false) {
-                DFS(Graph, 0, visited);
-            }
-        }
-
-        System.out.println();
+        createGraph(Graph); // Graph got created by Adjacency List.
+        // Source to Target initialized value
+        int src = 0, tar = 5;
+        // Depth First search algorithm must be used.
+        allPathSourceToDest(Graph, new boolean[V], src, "0", tar);
     }
 }
+
+// Time Complexity: O(V^V) (Exponential Time Complexity)
