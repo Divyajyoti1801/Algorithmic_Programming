@@ -1,5 +1,4 @@
 Graph
-
     - It is an intuitive Data Structure.
     - It is a network of nodes.
 
