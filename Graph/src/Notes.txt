@@ -62,3 +62,12 @@ Graph
             -- Recursive Traversal
     
     - Graph also has disconnected  component.
+
+
+- MINIMUM SPANNING TREES (MST)
+    -- A minimum spanning tree (MST) or minimum weight spanning tree is a subset of the edge of a connected, edge-weighted undirected graph that connects all the vertices together, without any cycles and the minimum possible total edge weight.
+    -- Subgraph exists
+    -- All vertices are included and connected
+    -- No cycle exists.
+    -- Minimum edge weight exists.
+    -- Always for weighted and undirected graph.
