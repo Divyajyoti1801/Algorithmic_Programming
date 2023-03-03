@@ -71,3 +71,6 @@ Graph
     -- No cycle exists.
     -- Minimum edge weight exists.
     -- Always for weighted and undirected graph.
+
+- STRONGLY CONNECTED COMPONENT
+    -- SCC is a component in which we can reach every vertex of the component from every other vertex in that component.
