@@ -9,9 +9,9 @@ import java.util.*;
     - Modified DFS: Reverse DFS
 
     -- Steps Of Algorithm:
-        - Get Node in stack (topological sort)
-        - Transpose the graph
-        - Do DFS according to stack nodes on the transpose graph
+        - Get Node in stack (topological sort) O(V+E)
+        - Transpose the graph O(V+E)
+        - Do DFS according to stack nodes on the transpose graph O(V+E)
 */
 
 public class KosarajuAlgorithm {
@@ -37,9 +37,68 @@ public class KosarajuAlgorithm {
         graph[2].add(new Edge(3, 4));
     }
 
+    static void topologicalSort(ArrayList<Edge> graph[], int curr, boolean visited[], Stack<Integer> s) {
+        visited[curr] = true;
+        for (int i = 0; i < graph[curr].size(); i++) {
+            Edge e = graph[curr].get(i);
+            if (!visited[e.dest]) {
+                topologicalSort(graph, e.dest, visited, s);
+            }
+        }
+
+        s.push(curr);
+    }
+
+    static void dfs(ArrayList<Edge> graph[], int curr, boolean visited[]) {
+        visited[curr] = true;
+        System.out.print(curr + " ");
+        for (int i = 0; i < graph[curr].size(); i++) {
+            Edge e = graph[curr].get(i);
+            if (!visited[e.dest]) {
+                dfs(graph, e.dest, visited);
+            }
+        }
+    }
+
+    static void Algo(ArrayList<Edge> graph[], int V) {
+        // Step 1
+        Stack<Integer> s = new Stack<>();
+        boolean visited[] = new boolean[V];
+
+        for (int i = 0; i < V; i++) {
+            if (!visited[i]) {
+                topologicalSort(graph, i, visited, s);
+            }
+        }
+
+        // Step 2
+        ArrayList<Edge> transpose[] = new ArrayList[V];
+        for (int i = 0; i < transpose.length; i++) {
+            visited[i] = false;
+            transpose[i] = new ArrayList<Edge>();
+        }
+
+        for (int i = 0; i < V; i++) {
+            for (int j = 0; j < graph[i].size(); j++) {
+                Edge e = graph[i].get(j);
+                transpose[e.dest].add(new Edge(e.dest, e.src));
+            }
+        }
+
+        // Step 3
+        while (!s.isEmpty()) {
+            int curr = s.pop();
+            if (!visited[curr]) {
+                dfs(graph, curr, visited);
+            }
+        }
+
+    }
+
     public static void main(String args[]) {
         int V = 6;
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
+
     }
 }
